@@ -55,7 +55,7 @@ const App = () => {
       </Routes>
       <div>
         <Container >
-          <Grid container spacing={5}>
+          <Grid container spacing={2}>
             <SpotCard />
             <SpotCard />
             <SpotCard />
