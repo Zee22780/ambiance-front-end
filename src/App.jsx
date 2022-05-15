@@ -11,6 +11,7 @@ import SpotCard from './components/Spots/SpotCard'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import * as authService from './services/authService'
+import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -54,8 +55,10 @@ const App = () => {
         />
       </Routes>
       <div>
-        <Container >
+        <Container className="grid-container">
           <Grid container spacing={2}>
+            <SpotCard />
+            <SpotCard />
             <SpotCard />
             <SpotCard />
             <SpotCard />
