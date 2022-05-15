@@ -7,6 +7,9 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreateSpotForm from './pages/CreateSpot/CreateSpotForm'
+import SpotCard from './components/Spots/SpotCard'
+import Container from '@mui/material/Container'
+import Grid from '@mui/material/Grid'
 import * as authService from './services/authService'
 
 const App = () => {
@@ -26,6 +29,7 @@ const App = () => {
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
+
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -49,6 +53,17 @@ const App = () => {
           element={user ? <CreateSpotForm /> : <Navigate to="/login" />}
         />
       </Routes>
+      <div>
+        <Container >
+          <Grid container spacing={5}>
+            <SpotCard />
+            <SpotCard />
+            <SpotCard />
+            <SpotCard />
+          </Grid>
+        </Container>
+      </div>
+      
     </>
   )
 }
