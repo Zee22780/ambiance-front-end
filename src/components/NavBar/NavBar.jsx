@@ -46,8 +46,8 @@ import CoffeeIcon from '@mui/icons-material/Coffee';
 
 
 //Material UI code
-
-const pages = ['Profiles', 'Add a Spot', 'Log Out', 'Change Password'];
+const pages = ['Home', 'Add a Spot', 'Log Out'];
+// const pages = ['Home', 'Profiles', 'Add a Spot', 'Log Out', 'Change Password'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
@@ -70,11 +70,11 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{background: '#000000'}}>
+    <AppBar position="static" sx={{background: '#00838f'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <CoffeeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          {/* <Typography
+          <Typography
             variant="h6"
             noWrap
             component="a"
@@ -89,10 +89,10 @@ const NavBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
-          </Typography> */}
+            AMBIANCE
+          </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'} }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -103,6 +103,7 @@ const NavBar = () => {
             >
               <MenuIcon />
             </IconButton>
+
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -145,7 +146,7 @@ const NavBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            AMBIANCE
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
