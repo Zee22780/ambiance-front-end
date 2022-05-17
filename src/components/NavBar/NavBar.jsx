@@ -93,7 +93,7 @@ const NavBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none'} }}>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -102,7 +102,7 @@ const NavBar = () => {
               color="inherit"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton> */}
 
             <Menu
               id="menu-appbar"
@@ -122,13 +122,22 @@ const NavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {/* {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center"></Typography>
                 </MenuItem>
-              ))}
+              ))} */}
+            
+              <Typography
+              variant="h5"
+              >
+                Add a Spot
+              </Typography>
+              
             </Menu>
           </Box>
+
+          
           <CoffeeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -149,7 +158,7 @@ const NavBar = () => {
             AMBIANCE
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -157,7 +166,15 @@ const NavBar = () => {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
+
+            <Button
+              variant="h5"
+              href="/addSpot"
+              >
+                Add a Spot
+              </Button>
+
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
