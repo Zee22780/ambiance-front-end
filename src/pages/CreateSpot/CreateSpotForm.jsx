@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Grid from '@mui/material/Grid'
-
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
@@ -13,10 +12,18 @@ import Button from "@mui/material/Button";
 
 const defaultValues = {
   name: "",
-  age: 0,
-  sex: "",
-  os: "",
-  favoriteNumber: 0,
+  country: "",
+  city: "",
+  neighborhood: "",
+  type: "",
+  laptop: "",
+  outlets: "",
+  wifi: "",
+  tables: "",
+  decor: "",
+  music: "",
+  price: "",
+  food: "",
 };
 
 const CreateSpotForm = () => {
@@ -25,13 +32,6 @@ const [formValues, setFormValues] = useState(defaultValues)
 
 const handleInputChange = (e) => {
   const { name, value } = e.target;
-  setFormValues({
-    ...formValues,
-    [name]: value,
-  });
-};
-
-const handleSliderChange = (name) => (e, value) => {
   setFormValues({
     ...formValues,
     [name]: value,
@@ -91,11 +91,66 @@ const handleSubmit = (event) => {
         </Grid>
         
         <Grid item>
+          <TextField
+            id="tables-input"
+            name="tables"
+            label="Tables Description"
+            type="text"
+            value={formValues.name}
+            onChange={handleInputChange}
+          />
+        </Grid>
+
+        <Grid item>
+          <TextField
+            id="decor-input"
+            name="decor"
+            label="Decor"
+            type="text"
+            value={formValues.name}
+            onChange={handleInputChange}
+          />
+        </Grid>
+
+        <Grid item>
+          <TextField
+            id="Music-input"
+            name="music"
+            label="Music Description"
+            type="text"
+            value={formValues.name}
+            onChange={handleInputChange}
+          />
+        </Grid>
+
+        <Grid item>
+          <TextField
+            id="price-input"
+            name="price"
+            label="Price"
+            type="text"
+            value={formValues.name}
+            onChange={handleInputChange}
+          />
+        </Grid>
+
+        <Grid item>
+          <TextField
+            id="food-input"
+            name="food"
+            label="Food Description"
+            type="text"
+            value={formValues.name}
+            onChange={handleInputChange}
+          />
+        </Grid>
+
+        <Grid item>
           <FormControl>
             <FormLabel>Type</FormLabel>
             <RadioGroup
               name="spot-type"
-              value={formValues.gender}
+              value={formValues.type}
               onChange={handleInputChange}
               row
             >
@@ -120,7 +175,92 @@ const handleSubmit = (event) => {
             </RadioGroup>
           </FormControl>
         </Grid>
+
+        <Grid item>
+          <FormControl>
+            <FormLabel>Laptop</FormLabel>
+            <RadioGroup
+              name="laptop-group"
+              value={formValues.laptop}
+              onChange={handleInputChange}
+              row
+            >
+              <FormControlLabel
+                key="yes"
+                value="yes"
+                control={<Radio size="small" />}
+                label="Yes"
+              />
+
+              <FormControlLabel
+                key="no"
+                value="no"
+                control={<Radio size="small" />}
+                label="No"
+              />
+
+            </RadioGroup>
+          </FormControl>
+        </Grid>
+
+        <Grid item>
+          <FormControl>
+            <FormLabel>Outlets</FormLabel>
+            <RadioGroup
+              name="outlets-group"
+              value={formValues.outlets}
+              onChange={handleInputChange}
+              row
+            >
+              <FormControlLabel
+                key="yes"
+                value="yes"
+                control={<Radio size="small" />}
+                label="Yes"
+              />
+
+              <FormControlLabel
+                key="no"
+                value="no"
+                control={<Radio size="small" />}
+                label="No"
+              />
+
+            </RadioGroup>
+          </FormControl>
+        </Grid>
+
+        <Grid item>
+          <FormControl>
+            <FormLabel>WiFi</FormLabel>
+            <RadioGroup
+              name="wifi-group"
+              value={formValues.wifi}
+              onChange={handleInputChange}
+              row
+            >
+              <FormControlLabel
+                key="yes"
+                value="yes"
+                control={<Radio size="small" />}
+                label="Yes"
+              />
+
+              <FormControlLabel
+                key="no"
+                value="no"
+                control={<Radio size="small" />}
+                label="No"
+              />
+
+            </RadioGroup>
+          </FormControl>
+        </Grid>
         
+       
+
+
+
         <Button variant="contained" color="primary" type="submit">
           Submit
         </Button>
