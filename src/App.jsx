@@ -54,7 +54,7 @@ const App = () => {
           element={user ? <CreateSpotForm /> : <Navigate to="/login" />}
         />
       </Routes>
-      <div>
+      {/* <div>
         <Container className="grid-container">
           <Grid container spacing={2}>
             <SpotCard />
@@ -65,7 +65,7 @@ const App = () => {
             <SpotCard />
           </Grid>
         </Container>
-      </div>
+      </div> */}
       
     </>
   )
