@@ -9,6 +9,7 @@ import Radio from '@mui/material/Radio';
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 const defaultValues = {
   name: "",
@@ -45,7 +46,8 @@ const handleSubmit = (event) => {
 
   return ( 
     <form onSubmit={handleSubmit}>
-      <Grid container alignItems="center" justify="center" direction="column">
+      <Box mt={2}>
+      <Grid container spacing={1} alignItems="center" justify="center" direction="column">
         <Grid item>
           <TextField
             id="name-input"
@@ -265,7 +267,9 @@ const handleSubmit = (event) => {
           Submit
         </Button>
       </Grid>
+      </Box>
     </form>
+    
   );
 }
 
