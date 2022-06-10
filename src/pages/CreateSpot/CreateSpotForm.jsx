@@ -63,7 +63,7 @@ const handleSubmit = (event) => {
             name="country"
             label="Country"
             type="text"
-            value={formValues.name}
+            value={formValues.country}
             onChange={handleInputChange}
           />
         </Grid>
@@ -74,7 +74,7 @@ const handleSubmit = (event) => {
             name="city"
             label="City"
             type="text"
-            value={formValues.name}
+            value={formValues.city}
             onChange={handleInputChange}
           />
         </Grid>
@@ -85,7 +85,7 @@ const handleSubmit = (event) => {
             name="neighborhood"
             label="Neighborhood"
             type="text"
-            value={formValues.name}
+            value={formValues.neighborhood}
             onChange={handleInputChange}
           />
         </Grid>
@@ -96,7 +96,7 @@ const handleSubmit = (event) => {
             name="tables"
             label="Tables Description"
             type="text"
-            value={formValues.name}
+            value={formValues.tables}
             onChange={handleInputChange}
           />
         </Grid>
@@ -107,7 +107,7 @@ const handleSubmit = (event) => {
             name="decor"
             label="Decor"
             type="text"
-            value={formValues.name}
+            value={formValues.decor}
             onChange={handleInputChange}
           />
         </Grid>
@@ -118,7 +118,7 @@ const handleSubmit = (event) => {
             name="music"
             label="Music Description"
             type="text"
-            value={formValues.name}
+            value={formValues.music}
             onChange={handleInputChange}
           />
         </Grid>
@@ -129,7 +129,7 @@ const handleSubmit = (event) => {
             name="price"
             label="Price"
             type="text"
-            value={formValues.name}
+            value={formValues.price}
             onChange={handleInputChange}
           />
         </Grid>
@@ -140,7 +140,7 @@ const handleSubmit = (event) => {
             name="food"
             label="Food Description"
             type="text"
-            value={formValues.name}
+            value={formValues.food}
             onChange={handleInputChange}
           />
         </Grid>
