@@ -11,7 +11,8 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 
-const defaultValues = {
+const CreateSpotForm = (props) => {
+const [formData, setFormData] = useState({
   name: "",
   country: "",
   city: "",
@@ -25,37 +26,38 @@ const defaultValues = {
   music: "",
   price: "",
   food: "",
-};
+})
 
-const CreateSpotForm = () => {
+// const handleInputChange = (e) => {
+//   const { name, value } = e.target;
+//   setFormValues({
+//     ...formValues,
+//     [name]: value,
+//   });
+// };
 
-const [formValues, setFormValues] = useState(defaultValues)
-
-const handleInputChange = (e) => {
-  const { name, value } = e.target;
-  setFormValues({
-    ...formValues,
-    [name]: value,
-  });
-};
+const handleInputChange = event => {
+  setFormData({...formData, [event.target.name]: event.target.value
+  })
+}
 
 const handleSubmit = (event) => {
   event.preventDefault();
-  console.log(formValues);
-  const spotFormData = new FormValues()
-  spotFormData.append('name', formValues.name)
-  spotFormData.append('country', formValues.country)
-  spotFormData.append('city', formValues.city)
-  spotFormData.append('neighborhood', formValues.neighborhood)
-  spotFormData.append('type', formValues.type)
-  spotFormData.append('laptop', formValues.laptop)
-  spotFormData.append('outlets', formValues.outlets)
-  spotFormData.append('wifi', formValues.wifi)
-  spotFormData.append('tables', formValues.tables)
-  spotFormData.append('decor', formValues.decor)
-  spotFormData.append('music', formValues.music)
-  spotFormData.append('price', formValues.price)
-  spotFormData.append('food', formValues.food)
+  console.log(formData);
+  const spotFormData = new FormData()
+  spotFormData.append('name', formData.name)
+  spotFormData.append('country', formData.country)
+  spotFormData.append('city', formData.city)
+  spotFormData.append('neighborhood', formData.neighborhood)
+  spotFormData.append('type', formData.type)
+  spotFormData.append('laptop', formData.laptop)
+  spotFormData.append('outlets', formData.outlets)
+  spotFormData.append('wifi', formData.wifi)
+  spotFormData.append('tables', formData.tables)
+  spotFormData.append('decor', formData.decor)
+  spotFormData.append('music', formData.music)
+  spotFormData.append('price', formData.price)
+  spotFormData.append('food', formData.food)
   props.handleAddSpot(spotFormData)
 };
 
@@ -69,7 +71,7 @@ const handleSubmit = (event) => {
             name="name"
             label="Spot"
             type="text"
-            value={formValues.name}
+            value={formData.name}
             onChange={handleInputChange}
           />
         </Grid>
@@ -80,7 +82,7 @@ const handleSubmit = (event) => {
             name="country"
             label="Country"
             type="text"
-            value={formValues.country}
+            value={formData.country}
             onChange={handleInputChange}
           />
         </Grid>
@@ -91,7 +93,7 @@ const handleSubmit = (event) => {
             name="city"
             label="City"
             type="text"
-            value={formValues.city}
+            value={formData.city}
             onChange={handleInputChange}
           />
         </Grid>
@@ -102,7 +104,7 @@ const handleSubmit = (event) => {
             name="neighborhood"
             label="Neighborhood"
             type="text"
-            value={formValues.neighborhood}
+            value={formData.neighborhood}
             onChange={handleInputChange}
           />
         </Grid>
@@ -113,7 +115,7 @@ const handleSubmit = (event) => {
             name="tables"
             label="Tables Description"
             type="text"
-            value={formValues.tables}
+            value={formData.tables}
             onChange={handleInputChange}
           />
         </Grid>
@@ -124,7 +126,7 @@ const handleSubmit = (event) => {
             name="decor"
             label="Decor"
             type="text"
-            value={formValues.decor}
+            value={formData.decor}
             onChange={handleInputChange}
           />
         </Grid>
@@ -135,7 +137,7 @@ const handleSubmit = (event) => {
             name="music"
             label="Music Description"
             type="text"
-            value={formValues.music}
+            value={formData.music}
             onChange={handleInputChange}
           />
         </Grid>
@@ -146,7 +148,7 @@ const handleSubmit = (event) => {
             name="price"
             label="Price"
             type="text"
-            value={formValues.price}
+            value={formData.price}
             onChange={handleInputChange}
           />
         </Grid>
@@ -157,7 +159,7 @@ const handleSubmit = (event) => {
             name="food"
             label="Food Description"
             type="text"
-            value={formValues.food}
+            value={formData.food}
             onChange={handleInputChange}
           />
         </Grid>
@@ -167,7 +169,7 @@ const handleSubmit = (event) => {
             <FormLabel>Type</FormLabel>
             <RadioGroup
               name="spot-type"
-              value={formValues.type}
+              value={formData.type}
               onChange={handleInputChange}
               row
             >
@@ -198,7 +200,7 @@ const handleSubmit = (event) => {
             <FormLabel>Laptop</FormLabel>
             <RadioGroup
               name="laptop-group"
-              value={formValues.laptop}
+              value={formData.laptop}
               onChange={handleInputChange}
               row
             >
@@ -225,7 +227,7 @@ const handleSubmit = (event) => {
             <FormLabel>Outlets</FormLabel>
             <RadioGroup
               name="outlets-group"
-              value={formValues.outlets}
+              value={formData.outlets}
               onChange={handleInputChange}
               row
             >
@@ -252,7 +254,7 @@ const handleSubmit = (event) => {
             <FormLabel>WiFi</FormLabel>
             <RadioGroup
               name="wifi-group"
-              value={formValues.wifi}
+              value={formData.wifi}
               onChange={handleInputChange}
               row
             >
