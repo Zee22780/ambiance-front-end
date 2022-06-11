@@ -11,6 +11,7 @@ import SpotCard from './components/Spots/SpotCard'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import * as authService from './services/authService'
+import * as spotService from './services/spotService'
 import './App.css'
 
 const App = () => {
