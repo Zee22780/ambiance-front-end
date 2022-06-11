@@ -16,6 +16,7 @@ import './App.css'
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  const [spots, setSpots] = useState([])
 
   const handleLogout = () => {
     authService.logout()
@@ -25,6 +26,13 @@ const App = () => {
 
   const handleSignupOrLogin = () => {
     setUser(authService.getUser())
+  }
+
+  const handleAddSpot = async(data) => {
+    console.log("New Spot Data", data)
+      const newSpot = await spotService.create(data)
+      setSpots([...spots, newSpot])
+      navigate('/')
   }
 
   return (
