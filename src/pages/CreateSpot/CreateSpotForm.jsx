@@ -42,6 +42,21 @@ const handleInputChange = (e) => {
 const handleSubmit = (event) => {
   event.preventDefault();
   console.log(formValues);
+  const spotFormData = new FormValues()
+  spotFormData.append('name', formValues.name)
+  spotFormData.append('country', formValues.country)
+  spotFormData.append('city', formValues.city)
+  spotFormData.append('neighborhood', formValues.neighborhood)
+  spotFormData.append('type', formValues.type)
+  spotFormData.append('laptop', formValues.laptop)
+  spotFormData.append('outlets', formValues.outlets)
+  spotFormData.append('wifi', formValues.wifi)
+  spotFormData.append('tables', formValues.tables)
+  spotFormData.append('decor', formValues.decor)
+  spotFormData.append('music', formValues.music)
+  spotFormData.append('price', formValues.price)
+  spotFormData.append('food', formValues.food)
+  props.handleAddSpot(spotFormData)
 };
 
   return ( 
@@ -258,10 +273,6 @@ const handleSubmit = (event) => {
             </RadioGroup>
           </FormControl>
         </Grid>
-        
-       
-
-
 
         <Button variant="contained" color="primary" type="submit">
           Submit
