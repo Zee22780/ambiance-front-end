@@ -28,14 +28,6 @@ const [formData, setFormData] = useState({
   food: "",
 })
 
-// const handleInputChange = (e) => {
-//   const { name, value } = e.target;
-//   setFormValues({
-//     ...formValues,
-//     [name]: value,
-//   });
-// };
-
 const handleInputChange = event => {
   setFormData({...formData, [event.target.name]: event.target.value
   })

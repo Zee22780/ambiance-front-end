@@ -42,6 +42,8 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
+        <Route path="/addSpot" element={<CreateSpotForm handleAddSpot={handleAddSpot}/>}
+        />
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
@@ -58,24 +60,11 @@ const App = () => {
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
-        <Route
+        {/* <Route
           path="/addSpot"
           element={user ? <CreateSpotForm /> : <Navigate to="/login" />}
-        />
+        /> */}
       </Routes>
-      {/* <div>
-        <Container className="grid-container">
-          <Grid container spacing={2}>
-            <SpotCard />
-            <SpotCard />
-            <SpotCard />
-            <SpotCard />
-            <SpotCard />
-            <SpotCard />
-          </Grid>
-        </Container>
-      </div> */}
-      
     </>
   )
 }
