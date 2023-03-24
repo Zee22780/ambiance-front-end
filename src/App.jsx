@@ -60,10 +60,10 @@ const App = () => {
           path="/changePassword"
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
-        {/* <Route
+        <Route
           path="/addSpot"
           element={user ? <CreateSpotForm /> : <Navigate to="/login" />}
-        /> */}
+        />
       </Routes>
     </>
   )

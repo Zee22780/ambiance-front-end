@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Grid from '@mui/material/Grid'
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -10,22 +10,24 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import './CreateSpot.css'
 
 const CreateSpotForm = (props) => {
-const [formData, setFormData] = useState({
+  const [validForm, setValidForm] = useState(false)
+  const [formData, setFormData] = useState({
   name: "",
   country: "",
   city: "",
   neighborhood: "",
-  type: "",
-  laptop: "",
-  outlets: "",
-  wifi: "",
-  tables: "",
-  decor: "",
-  music: "",
-  price: "",
-  food: "",
+  // type: "",
+  // laptop: "",
+  // outlets: "",
+  // wifi: "",
+  // tables: "",
+  // decor: "",
+  // music: "",
+  // price: "",
+  // food: "",
 })
 
 const handleInputChange = event => {
@@ -33,28 +35,37 @@ const handleInputChange = event => {
   })
 }
 
+const formElement = useRef()
+
+useEffect(() => {
+  formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)},[formData])
+
 const handleSubmit = (event) => {
   event.preventDefault();
   console.log(formData);
-  const spotFormData = new FormData()
-  spotFormData.append('name', formData.name)
-  spotFormData.append('country', formData.country)
-  spotFormData.append('city', formData.city)
-  spotFormData.append('neighborhood', formData.neighborhood)
-  spotFormData.append('type', formData.type)
-  spotFormData.append('laptop', formData.laptop)
-  spotFormData.append('outlets', formData.outlets)
-  spotFormData.append('wifi', formData.wifi)
-  spotFormData.append('tables', formData.tables)
-  spotFormData.append('decor', formData.decor)
-  spotFormData.append('music', formData.music)
-  spotFormData.append('price', formData.price)
-  spotFormData.append('food', formData.food)
-  props.handleAddSpot(spotFormData)
+  props.handleAddSpot(formData)
+
+  // const spotFormData = new FormData()
+  // spotFormData.append('name', formData.name)
+  // spotFormData.append('country', formData.country)
+  // spotFormData.append('city', formData.city)
+  // spotFormData.append('neighborhood', formData.neighborhood)
+  // spotFormData.append('type', formData.type)
+  // spotFormData.append('laptop', formData.laptop)
+  // spotFormData.append('outlets', formData.outlets)
+  // spotFormData.append('wifi', formData.wifi)
+  // spotFormData.append('tables', formData.tables)
+  // spotFormData.append('decor', formData.decor)
+  // spotFormData.append('music', formData.music)
+  // spotFormData.append('price', formData.price)
+  // spotFormData.append('food', formData.food)
+  // props.handleAddSpot(spotFormData)
 };
 
   return ( 
-    <form onSubmit={handleSubmit}>
+    <> 
+    <h1>Add Spot</h1>
+    <form autoComplete="off" onSubmit={handleSubmit} ref={formElement}>
       <Box mt={2}>
       <Grid container spacing={1} alignItems="center" justify="center" direction="column">
         <Grid item>
@@ -101,7 +112,7 @@ const handleSubmit = (event) => {
           />
         </Grid>
         
-        <Grid item>
+        {/* <Grid item>
           <TextField
             id="tables-input"
             name="tables"
@@ -110,9 +121,9 @@ const handleSubmit = (event) => {
             value={formData.tables}
             onChange={handleInputChange}
           />
-        </Grid>
+        </Grid> */}
 
-        <Grid item>
+        {/* <Grid item>
           <TextField
             id="decor-input"
             name="decor"
@@ -121,9 +132,9 @@ const handleSubmit = (event) => {
             value={formData.decor}
             onChange={handleInputChange}
           />
-        </Grid>
+        </Grid> */}
 
-        <Grid item>
+        {/* <Grid item>
           <TextField
             id="Music-input"
             name="music"
@@ -266,15 +277,20 @@ const handleSubmit = (event) => {
 
             </RadioGroup>
           </FormControl>
-        </Grid>
+        </Grid> */}
 
-        <Button variant="contained" color="primary" type="submit">
+        <Button 
+          variant="contained" 
+          color="primary" 
+          type="submit"
+          disabled={!validForm}
+        >
           Submit
         </Button>
       </Grid>
       </Box>
     </form>
-    
+    </>
   );
 }
 
